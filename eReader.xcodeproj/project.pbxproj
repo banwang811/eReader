@@ -14,6 +14,15 @@
 		A503352E1FD782A500EE0D43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A503352D1FD782A500EE0D43 /* main.m */; };
 		A50335381FD782A500EE0D43 /* eReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50335371FD782A500EE0D43 /* eReaderTests.m */; };
 		A50335431FD782A500EE0D43 /* eReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50335421FD782A500EE0D43 /* eReaderUITests.m */; };
+		A50335671FD7864B00EE0D43 /* prase in Resources */ = {isa = PBXBuildFile; fileRef = A50335661FD7864B00EE0D43 /* prase */; };
+		A503356C1FD7866700EE0D43 /* LSEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A50335681FD7866600EE0D43 /* LSEngine.m */; };
+		A503356D1FD7866700EE0D43 /* LSService.m in Sources */ = {isa = PBXBuildFile; fileRef = A50335691FD7866600EE0D43 /* LSService.m */; };
+		A50335701FD7866E00EE0D43 /* NSString+Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = A503356E1FD7866E00EE0D43 /* NSString+Unit.m */; };
+		A50335741FD78A1A00EE0D43 /* LSBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50335721FD78A1A00EE0D43 /* LSBaseController.m */; };
+		A50335751FD78A1A00EE0D43 /* LSBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50335731FD78A1A00EE0D43 /* LSBaseController.xib */; };
+		A50335781FD78A8800EE0D43 /* LSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50335771FD78A8800EE0D43 /* LSTabBarController.m */; };
+		A503357D1FD78CA600EE0D43 /* LSBookShelfController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A503357A1FD78CA500EE0D43 /* LSBookShelfController.xib */; };
+		A503357E1FD78CA600EE0D43 /* LSBookShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = A503357C1FD78CA500EE0D43 /* LSBookShelfController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +59,24 @@
 		A503353E1FD782A500EE0D43 /* eReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50335421FD782A500EE0D43 /* eReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eReaderUITests.m; sourceTree = "<group>"; };
 		A50335441FD782A500EE0D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A50335561FD7847B00EE0D43 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A50335571FD7854300EE0D43 /* Interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interface.h; sourceTree = "<group>"; };
+		A50335581FD7854400EE0D43 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		A50335661FD7864B00EE0D43 /* prase */ = {isa = PBXFileReference; lastKnownFileType = folder; path = prase; sourceTree = "<group>"; };
+		A50335681FD7866600EE0D43 /* LSEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSEngine.m; sourceTree = "<group>"; };
+		A50335691FD7866600EE0D43 /* LSService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSService.m; sourceTree = "<group>"; };
+		A503356A1FD7866600EE0D43 /* LSEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSEngine.h; sourceTree = "<group>"; };
+		A503356B1FD7866600EE0D43 /* LSService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSService.h; sourceTree = "<group>"; };
+		A503356E1FD7866E00EE0D43 /* NSString+Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Unit.m"; sourceTree = "<group>"; };
+		A503356F1FD7866E00EE0D43 /* NSString+Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Unit.h"; sourceTree = "<group>"; };
+		A50335711FD78A1A00EE0D43 /* LSBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSBaseController.h; sourceTree = "<group>"; };
+		A50335721FD78A1A00EE0D43 /* LSBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSBaseController.m; sourceTree = "<group>"; };
+		A50335731FD78A1A00EE0D43 /* LSBaseController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LSBaseController.xib; sourceTree = "<group>"; };
+		A50335761FD78A8800EE0D43 /* LSTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSTabBarController.h; sourceTree = "<group>"; };
+		A50335771FD78A8800EE0D43 /* LSTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSTabBarController.m; sourceTree = "<group>"; };
+		A503357A1FD78CA500EE0D43 /* LSBookShelfController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSBookShelfController.xib; sourceTree = "<group>"; };
+		A503357B1FD78CA500EE0D43 /* LSBookShelfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSBookShelfController.h; sourceTree = "<group>"; };
+		A503357C1FD78CA500EE0D43 /* LSBookShelfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSBookShelfController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +146,7 @@
 				A50335551FD7839600EE0D43 /* Service */,
 				A50335531FD7834400EE0D43 /* Import */,
 				A50335511FD7831300EE0D43 /* Unit */,
+				A50335591FD7863100EE0D43 /* Src */,
 				A50335271FD782A500EE0D43 /* Assets.xcassets */,
 				A50335291FD782A500EE0D43 /* LaunchScreen.storyboard */,
 				A503352C1FD782A500EE0D43 /* Info.plist */,
@@ -148,6 +176,11 @@
 		A50335501FD7830400EE0D43 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				A50335761FD78A8800EE0D43 /* LSTabBarController.h */,
+				A50335771FD78A8800EE0D43 /* LSTabBarController.m */,
+				A50335711FD78A1A00EE0D43 /* LSBaseController.h */,
+				A50335721FD78A1A00EE0D43 /* LSBaseController.m */,
+				A50335731FD78A1A00EE0D43 /* LSBaseController.xib */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -155,6 +188,8 @@
 		A50335511FD7831300EE0D43 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				A503356F1FD7866E00EE0D43 /* NSString+Unit.h */,
+				A503356E1FD7866E00EE0D43 /* NSString+Unit.m */,
 			);
 			path = Unit;
 			sourceTree = "<group>";
@@ -162,6 +197,7 @@
 		A50335521FD7833600EE0D43 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A50335791FD78C7200EE0D43 /* BookSelf */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -176,6 +212,9 @@
 		A50335541FD7834F00EE0D43 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				A50335581FD7854400EE0D43 /* Header.h */,
+				A50335571FD7854300EE0D43 /* Interface.h */,
+				A50335561FD7847B00EE0D43 /* PrefixHeader.pch */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -183,8 +222,30 @@
 		A50335551FD7839600EE0D43 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A503356B1FD7866600EE0D43 /* LSService.h */,
+				A50335691FD7866600EE0D43 /* LSService.m */,
+				A503356A1FD7866600EE0D43 /* LSEngine.h */,
+				A50335681FD7866600EE0D43 /* LSEngine.m */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		A50335591FD7863100EE0D43 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				A50335661FD7864B00EE0D43 /* prase */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		A50335791FD78C7200EE0D43 /* BookSelf */ = {
+			isa = PBXGroup;
+			children = (
+				A503357B1FD78CA500EE0D43 /* LSBookShelfController.h */,
+				A503357C1FD78CA500EE0D43 /* LSBookShelfController.m */,
+				A503357A1FD78CA500EE0D43 /* LSBookShelfController.xib */,
+			);
+			path = BookSelf;
 			sourceTree = "<group>";
 		};
 		A526920CDF61117A55DAA7B7 /* Pods */ = {
@@ -305,8 +366,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50335671FD7864B00EE0D43 /* prase in Resources */,
 				A503352B1FD782A500EE0D43 /* LaunchScreen.storyboard in Resources */,
 				A50335281FD782A500EE0D43 /* Assets.xcassets in Resources */,
+				A503357D1FD78CA600EE0D43 /* LSBookShelfController.xib in Resources */,
+				A50335751FD78A1A00EE0D43 /* LSBaseController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +453,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A503356C1FD7866700EE0D43 /* LSEngine.m in Sources */,
+				A50335741FD78A1A00EE0D43 /* LSBaseController.m in Sources */,
+				A503357E1FD78CA600EE0D43 /* LSBookShelfController.m in Sources */,
+				A50335701FD7866E00EE0D43 /* NSString+Unit.m in Sources */,
+				A50335781FD78A8800EE0D43 /* LSTabBarController.m in Sources */,
 				A503352E1FD782A500EE0D43 /* main.m in Sources */,
+				A503356D1FD7866700EE0D43 /* LSService.m in Sources */,
 				A50335201FD782A500EE0D43 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P5HC62PN9;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/eReader/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = eReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gqhmt.bitstart.eReader;
@@ -563,6 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P5HC62PN9;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/eReader/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = eReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gqhmt.bitstart.eReader;

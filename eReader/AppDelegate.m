@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LSBookShelfController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [UIViewController new];
+    self.window.rootViewController = [LSBookShelfController new];
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
