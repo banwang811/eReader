@@ -21,7 +21,6 @@
 
 @property (nonatomic, strong) UIPageViewController     *pageViewController;
 @property (nonatomic, strong) LSChapterModel           *model;
-@property (nonatomic, strong) NSMutableArray           *chapterModels;
 
 @end
 
@@ -38,7 +37,7 @@
     [super viewDidLoad];
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
-    [self.pageViewController setViewControllers:[NSArray arrayWithObject:[UIViewController new]]
+    [self.pageViewController setViewControllers:[NSArray arrayWithObject:[self readViewWithChapter:_chapter page:_page]]
                                       direction:UIPageViewControllerNavigationDirectionReverse
                                        animated:NO
                                      completion:nil];
@@ -54,7 +53,6 @@
         _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
         _pageViewController.delegate = self;
         _pageViewController.dataSource = self;
-        [self.view addSubview:_pageViewController.view];
     }
     return _pageViewController;
 }
@@ -78,10 +76,10 @@
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
-    LSChapterModel *model = [self.chapterModels objectAtIndex:_chapter];
-    if (_page == model.pageCount) {
+    LSChapterModel *model = [self.chapterModels lastObject];
+    if (_page == model.pageCount - 1) {
         //判断是否更换章节
-        if (_chapter < self.chapterModels.count) {
+        if (_chapter < self.chapterModels.count - 1) {
             _chapter ++;
             _page = 0;
             return [self readViewWithChapter:_chapter page:_page];

@@ -58,7 +58,7 @@
     dict[NSFontAttributeName] = [UIFont systemFontOfSize:config.fontSize];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineSpacing = config.lineSpace;
-    paragraphStyle.alignment = NSTextAlignmentJustified;
+    paragraphStyle.alignment = NSTextAlignmentLeft;
     dict[NSParagraphStyleAttributeName] = paragraphStyle;
     return [dict copy];
 }

@@ -36,7 +36,7 @@
         _lineSpace = 10.0f;
         _fontSize = 14.0f;
         _fontColor = [UIColor blackColor];
-        _theme = [UIColor whiteColor];
+        _theme = [UIColor colorWithRed:188 green:169 blue:139 alpha:1];
         [self addObserver:self forKeyPath:@"fontSize" options:NSKeyValueObservingOptionNew context:NULL];
         [self addObserver:self forKeyPath:@"lineSpace" options:NSKeyValueObservingOptionNew context:NULL];
         [self addObserver:self forKeyPath:@"fontColor" options:NSKeyValueObservingOptionNew context:NULL];
@@ -47,27 +47,27 @@
     return self;
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
-{
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     [LSYReadConfig updateLocalConfig:self];
 }
-+(void)updateLocalConfig:(LSYReadConfig *)config
-{
-    NSMutableData *data=[[NSMutableData alloc]init];
-    NSKeyedArchiver *archiver=[[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
+
++ (void)updateLocalConfig:(LSYReadConfig *)config{
+    NSMutableData *data = [[NSMutableData alloc]init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
     [archiver encodeObject:config forKey:@"ReadConfig"];
     [archiver finishEncoding];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"ReadConfig"];
 }
--(void)encodeWithCoder:(NSCoder *)aCoder
-{
+
+- (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeDouble:self.fontSize forKey:@"fontSize"];
     [aCoder encodeDouble:self.lineSpace forKey:@"lineSpace"];
     [aCoder encodeObject:self.fontColor forKey:@"fontColor"];
     [aCoder encodeObject:self.theme forKey:@"theme"];
 }
--(id)initWithCoder:(NSCoder *)aDecoder
-{
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
     if (self) {
         self.fontSize = [aDecoder decodeDoubleForKey:@"fontSize"];
@@ -77,4 +77,5 @@
     }
     return self;
 }
+
 @end

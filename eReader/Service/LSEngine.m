@@ -88,8 +88,19 @@ dispatch_semaphore_t semaphore;
     JSValue *content  = [prase callWithArguments:[NSArray arrayWithObject:htmlStr]];
     NSString *articleStr = [content toString];
     articleStr = [articleStr stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@" "];
-    articleStr = [articleStr stringByReplacingOccurrencesOfString:@"<br>" withString:@""];
+    articleStr = [articleStr stringByReplacingOccurrencesOfString:@"<br><br>" withString:@"\n"];
     return articleStr;
+//    articleStr = [articleStr stringByReplacingOccurrencesOfString:@"<br>" withString:@""];
+//    NSArray *arr = [articleStr componentsSeparatedByString:@"\n"];
+//    NSMutableArray *array = [NSMutableArray new];
+//    for (int i = 0; i < arr.count; i ++) {
+//        NSString *str = [arr objectAtIndex:i];
+//        if (![str isEqualToString:@""]) {
+//            str = [@"   "  stringByAppendingString:str];
+//            [array addObject:str];
+//        }
+//    }
+//    return [array componentsJoinedByString:@"\n"];
 }
 
 

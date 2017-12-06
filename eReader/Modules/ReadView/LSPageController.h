@@ -10,4 +10,6 @@
 
 @interface LSPageController : LSBaseController
 
+@property (nonatomic, strong) NSMutableArray           *chapterModels;
+
 @end
