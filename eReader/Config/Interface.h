@@ -14,6 +14,13 @@
 #define LeftSpacing 15.0f
 #define RightSpacing  15.0f
 
+//屏幕宽度
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+//屏幕高度
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define LSAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 #define SEARCH_URL  @"http://m.book9.net/s.php?"
 
 

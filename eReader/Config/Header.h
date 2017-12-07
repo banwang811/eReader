@@ -16,7 +16,7 @@
 #import "LSYReadConfig.h"
 #import "LSReadModel.h"
 #import "LSChapterModel.h"
-
+#import <YYKit/YYKit.h>
 #import "LSPrase.h"
 
 #endif /* Header_h */

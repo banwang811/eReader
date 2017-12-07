@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LSBookShelfController">
             <connections>
+                <outlet property="tableView" destination="ydr-zC-HHi" id="hb3-4c-9iF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-zC-HHi">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="3en-pR-JUP"/>
+                        <outlet property="delegate" destination="-1" id="QBl-kf-5Dg"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ydr-zC-HHi" secondAttribute="bottom" id="Y6U-6O-dEN"/>
+                <constraint firstItem="ydr-zC-HHi" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="YSo-OZ-c9T"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ydr-zC-HHi" secondAttribute="trailing" id="vsb-H9-HPi"/>
+                <constraint firstItem="ydr-zC-HHi" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="wcR-iY-PSQ"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>
     </objects>

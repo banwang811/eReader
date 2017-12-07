@@ -18,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window addSubview:[LSEngine shareEngine].webView];
+    [[LSEngine shareEngine] startEngine];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LSBookShelfController new]];
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
