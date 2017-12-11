@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LSChapterModel.h"
+#import "LSRecordModel.h"
 
 @interface LSReadModel : NSObject<NSCoding>
 
@@ -17,5 +18,6 @@
 @property (nonatomic, strong) NSString          *discripe;
 @property (nonatomic, strong) NSString          *libraryUrl;
 @property (nonatomic, strong) NSMutableArray <LSChapterModel *>*chapters;
+@property (nonatomic, strong) LSRecordModel     *recordModel;
 
 @end

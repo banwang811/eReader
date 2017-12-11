@@ -39,6 +39,7 @@
 		A50C76DA1FDE1E8400DC1A37 /* LSLibraryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50C76D81FDE1E8400DC1A37 /* LSLibraryController.xib */; };
 		A50C76DE1FDE223700DC1A37 /* LSLibraryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50C76DC1FDE223700DC1A37 /* LSLibraryCell.m */; };
 		A50C76DF1FDE223700DC1A37 /* LSLibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50C76DD1FDE223700DC1A37 /* LSLibraryCell.xib */; };
+		A54DFCB21FDE8A02009D05AB /* LSRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54DFCB11FDE8A02009D05AB /* LSRecordModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		A50C76DB1FDE223700DC1A37 /* LSLibraryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSLibraryCell.h; sourceTree = "<group>"; };
 		A50C76DC1FDE223700DC1A37 /* LSLibraryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSLibraryCell.m; sourceTree = "<group>"; };
 		A50C76DD1FDE223700DC1A37 /* LSLibraryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LSLibraryCell.xib; sourceTree = "<group>"; };
+		A54DFCB01FDE8A02009D05AB /* LSRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSRecordModel.h; sourceTree = "<group>"; };
+		A54DFCB11FDE8A02009D05AB /* LSRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSRecordModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +325,8 @@
 				A50335991FD7C76F00EE0D43 /* LSReadingController.h */,
 				A503359A1FD7C76F00EE0D43 /* LSReadingController.m */,
 				A503359B1FD7C76F00EE0D43 /* LSReadingController.xib */,
+				A54DFCB01FDE8A02009D05AB /* LSRecordModel.h */,
+				A54DFCB11FDE8A02009D05AB /* LSRecordModel.m */,
 			);
 			path = ReadView;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				A503358E1FD7BFBC00EE0D43 /* LSYReadConfig.m in Sources */,
 				A50335881FD7BD0B00EE0D43 /* LSReadModel.m in Sources */,
 				A50335821FD7952100EE0D43 /* LSReadingView.m in Sources */,
+				A54DFCB21FDE8A02009D05AB /* LSRecordModel.m in Sources */,
 				A503352E1FD782A500EE0D43 /* main.m in Sources */,
 				A503356D1FD7866700EE0D43 /* LSService.m in Sources */,
 				A50335971FD7C75800EE0D43 /* LSPageController.m in Sources */,

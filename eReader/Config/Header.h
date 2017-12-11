@@ -18,5 +18,6 @@
 #import "LSChapterModel.h"
 #import <YYKit/YYKit.h>
 #import "LSPrase.h"
+#import "LSRecordModel.h"
 
 #endif /* Header_h */

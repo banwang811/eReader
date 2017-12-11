@@ -10,6 +10,13 @@
 
 @implementation LSReadModel
 
+- (instancetype)init{
+    if (self = [super init]) {
+        self.chapters = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (NSString *)url{
     return [NSString stringWithFormat:@"%@%@",SERVER_ADDRESS,_url];
 }

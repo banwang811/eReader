@@ -12,18 +12,12 @@
 
 @interface LSLibraryController ()<UITableViewDelegate,UITableViewDataSource,UISearchControllerDelegate>
 
-@property (nonatomic, strong) NSMutableArray              *dataArray;
 @property (weak, nonatomic) IBOutlet UITableView          *tableView;
 
 @end
 
 @implementation LSLibraryController
-- (instancetype)init{
-    if (self = [super init]) {
-        self.dataArray = [NSMutableArray array];
-    }
-    return self;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,7 +28,7 @@
                     LSChapterModel *model = [[LSChapterModel alloc] init];
                     model.title = [info objectForKey:@"name"];
                     model.url = [info objectForKey:@"url"];
-                    [self.dataArray addObject:model];
+                    [self.model.chapters addObject:model];
                 }
                 [self.tableView reloadData];
     }];
@@ -52,15 +46,24 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    __block LSChapterModel *model = [self.dataArray objectAtIndex:indexPath.row];
-    [LSService getChapterContent:model.url completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
-        NSString *content = [[LSEngine shareEngine] getArticleContent:string];
-        NSLog(@"%@",content);
-        model = [LSPrase praseChapterWithContent:content chapterModel:model];
-        LSPageController *con = [[LSPageController alloc] init];
-        [con.chapterModels addObject:model];
-        [self.navigationController pushViewController:con animated:YES];
-    }];
+    LSChapterModel *model = [self.model.chapters objectAtIndex:indexPath.row];
+    LSRecordModel *recordModel = [[LSRecordModel alloc] init];
+    recordModel.chapter = indexPath.row;
+    recordModel.page = 0;
+    recordModel.chapterModel = model;
+    self.model.recordModel = recordModel;
+    LSPageController *con = [[LSPageController alloc] init];
+    con.model = self.model;
+    [self.navigationController pushViewController:con animated:YES];
+//    __block LSChapterModel *model = [self.model.chapters objectAtIndex:indexPath.row];
+//    [LSService getChapterContent:model.url completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
+//        NSString *content = [[LSEngine shareEngine] getArticleContent:string];
+//        NSLog(@"%@",content);
+//        model = [LSPrase praseChapterWithContent:content chapterModel:model];
+//        LSPageController *con = [[LSPageController alloc] init];
+//        [con.chapterModels addObject:model];
+//        [self.navigationController pushViewController:con animated:YES];
+//    }];
 }
 
 
@@ -75,13 +78,13 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LSLibraryCell" owner:nil options:0] firstObject];
     }
-    LSChapterModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    LSChapterModel *model = [self.model.chapters objectAtIndex:indexPath.row];
     cell.model = model;
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    return self.model.chapters.count;
 }
 
 @end

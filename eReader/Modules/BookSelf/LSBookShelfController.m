@@ -84,6 +84,7 @@
     LSReadModel *model = [self.dataArray objectAtIndex:indexPath.row];
     LSLibraryController *controller = [[LSLibraryController alloc] init];
     controller.model = model;
+    
     [self.navigationController pushViewController:controller animated:YES];
 }
 

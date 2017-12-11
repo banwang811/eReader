@@ -18,6 +18,7 @@
     CGPathRef path = CGPathCreateWithRect(CGRectMake(LeftSpacing, TopSpacing, [UIScreen mainScreen].bounds.size.width-LeftSpacing - RightSpacing, [UIScreen mainScreen].bounds.size.height - TopSpacing - BottomSpacing), NULL);
     BOOL hasMorePages = YES;
     int currentOffset = 0;
+    [model.pageLocations removeAllObjects];
     while (hasMorePages) {
         [model.pageLocations addObject:@(currentOffset)];
         CTFrameRef frame = CTFramesetterCreateFrame(setter, CFRangeMake(currentOffset, 0), path, NULL);
