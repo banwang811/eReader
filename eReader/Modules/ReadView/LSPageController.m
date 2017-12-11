@@ -60,6 +60,11 @@
     return _pageViewController;
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    _pageViewController.view.frame = self.view.frame;
+}
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
     if (_page == 0) {
         //判断是否更换章节
