@@ -8,6 +8,7 @@
 
 #import "LSLibraryController.h"
 #import "LSLibraryCell.h"
+#import "LSPageController.h"
 
 @interface LSLibraryController ()<UITableViewDelegate,UITableViewDataSource,UISearchControllerDelegate>
 
@@ -39,10 +40,25 @@
     }];
     // Do any additional setup after loading the view from its nib.
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    LSChapterModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    [LSService getChapterContent:model.url completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
+        NSString *content = [[LSEngine shareEngine] getArticleContent:string];
+        NSLog(@"%@",content);
+        LSChapterModel *model = [LSPrase praseChapterModel:content];
+        LSPageController *con = [[LSPageController alloc] init];
+        [con.chapterModels addObject:model];
+        [self.navigationController pushViewController:con animated:YES];
+    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
