@@ -10,4 +10,7 @@
 
 @implementation LSReadModel
 
+- (NSString *)url{
+    return [NSString stringWithFormat:@"%@%@",SERVER_ADDRESS,_url];
+}
 @end

@@ -33,6 +33,10 @@
 		A503359C1FD7C76F00EE0D43 /* LSReadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = A503359A1FD7C76F00EE0D43 /* LSReadingController.m */; };
 		A503359D1FD7C76F00EE0D43 /* LSReadingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A503359B1FD7C76F00EE0D43 /* LSReadingController.xib */; };
 		A50335A01FD7FC2800EE0D43 /* LSSearchDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A503359F1FD7FC2800EE0D43 /* LSSearchDelegate.m */; };
+		A50C76D41FDE1B4800DC1A37 /* LSBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50C76D21FDE1B4800DC1A37 /* LSBookCell.m */; };
+		A50C76D51FDE1B4800DC1A37 /* LSBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50C76D31FDE1B4800DC1A37 /* LSBookCell.xib */; };
+		A5809D461FDBD6C4002FE25E /* LSReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5809D441FDBD6C4002FE25E /* LSReadController.m */; };
+		A5809D471FDBD6C4002FE25E /* LSReadController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5809D451FDBD6C4002FE25E /* LSReadController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,12 @@
 		A503359B1FD7C76F00EE0D43 /* LSReadingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LSReadingController.xib; sourceTree = "<group>"; };
 		A503359E1FD7FC2800EE0D43 /* LSSearchDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSSearchDelegate.h; sourceTree = "<group>"; };
 		A503359F1FD7FC2800EE0D43 /* LSSearchDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSSearchDelegate.m; sourceTree = "<group>"; };
+		A50C76D11FDE1B4800DC1A37 /* LSBookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSBookCell.h; sourceTree = "<group>"; };
+		A50C76D21FDE1B4800DC1A37 /* LSBookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSBookCell.m; sourceTree = "<group>"; };
+		A50C76D31FDE1B4800DC1A37 /* LSBookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LSBookCell.xib; sourceTree = "<group>"; };
+		A5809D431FDBD6C4002FE25E /* LSReadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSReadController.h; sourceTree = "<group>"; };
+		A5809D441FDBD6C4002FE25E /* LSReadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSReadController.m; sourceTree = "<group>"; };
+		A5809D451FDBD6C4002FE25E /* LSReadController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LSReadController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +237,9 @@
 			children = (
 				A503357F1FD7946600EE0D43 /* ReadView */,
 				A50335791FD78C7200EE0D43 /* BookSelf */,
+				A5809D431FDBD6C4002FE25E /* LSReadController.h */,
+				A5809D441FDBD6C4002FE25E /* LSReadController.m */,
+				A5809D451FDBD6C4002FE25E /* LSReadController.xib */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -275,6 +288,9 @@
 				A503357A1FD78CA500EE0D43 /* LSBookShelfController.xib */,
 				A503359E1FD7FC2800EE0D43 /* LSSearchDelegate.h */,
 				A503359F1FD7FC2800EE0D43 /* LSSearchDelegate.m */,
+				A50C76D11FDE1B4800DC1A37 /* LSBookCell.h */,
+				A50C76D21FDE1B4800DC1A37 /* LSBookCell.m */,
+				A50C76D31FDE1B4800DC1A37 /* LSBookCell.xib */,
 			);
 			path = BookSelf;
 			sourceTree = "<group>";
@@ -424,6 +440,8 @@
 				A503352B1FD782A500EE0D43 /* LaunchScreen.storyboard in Resources */,
 				A50335281FD782A500EE0D43 /* Assets.xcassets in Resources */,
 				A503359D1FD7C76F00EE0D43 /* LSReadingController.xib in Resources */,
+				A5809D471FDBD6C4002FE25E /* LSReadController.xib in Resources */,
+				A50C76D51FDE1B4800DC1A37 /* LSBookCell.xib in Resources */,
 				A503357D1FD78CA600EE0D43 /* LSBookShelfController.xib in Resources */,
 				A50335751FD78A1A00EE0D43 /* LSBaseController.xib in Resources */,
 				A50335981FD7C75800EE0D43 /* LSPageController.xib in Resources */,
@@ -518,10 +536,12 @@
 				A503357E1FD78CA600EE0D43 /* LSBookShelfController.m in Sources */,
 				A50335701FD7866E00EE0D43 /* NSString+Unit.m in Sources */,
 				A50335781FD78A8800EE0D43 /* LSTabBarController.m in Sources */,
+				A50C76D41FDE1B4800DC1A37 /* LSBookCell.m in Sources */,
 				A503358E1FD7BFBC00EE0D43 /* LSYReadConfig.m in Sources */,
 				A50335881FD7BD0B00EE0D43 /* LSReadModel.m in Sources */,
 				A50335821FD7952100EE0D43 /* LSReadingView.m in Sources */,
 				A503352E1FD782A500EE0D43 /* main.m in Sources */,
+				A5809D461FDBD6C4002FE25E /* LSReadController.m in Sources */,
 				A503356D1FD7866700EE0D43 /* LSService.m in Sources */,
 				A50335971FD7C75800EE0D43 /* LSPageController.m in Sources */,
 				A50335A01FD7FC2800EE0D43 /* LSSearchDelegate.m in Sources */,
@@ -682,13 +702,17 @@
 			baseConfigurationReference = 7AB3B9DC565E4E6F5732E3B4 /* Pods-eReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P5HC62PN9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/eReader/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = eReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gqhmt.bitstart.eReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banwang.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -698,13 +722,17 @@
 			baseConfigurationReference = 5B5B4360259574B5D340EA5B /* Pods-eReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4P5HC62PN9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/eReader/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = eReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gqhmt.bitstart.eReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banwang.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

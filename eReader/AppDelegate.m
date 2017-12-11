@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "LSBookShelfController.h"
 #import "LSPageController.h"
+#import "LSReadController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -20,6 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window addSubview:[LSEngine shareEngine].webView];
     [[LSEngine shareEngine] startEngine];
+//    self.window.rootViewController = [LSReadController new];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[LSBookShelfController new]];
     [self.window makeKeyAndVisible];
     // Override point for customization after application launch.

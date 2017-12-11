@@ -7,9 +7,12 @@
 //
 
 #import "LSSearchDelegate.h"
+#import "LSBookCell.h"
 
 @interface LSSearchDelegate()
+
 @property (nonatomic, strong) NSMutableArray        *articleList;
+
 @end
 
 @implementation LSSearchDelegate
@@ -26,10 +29,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    LSBookCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"LSBookCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"LSBookCell" owner:nil options:0] firstObject];
     }
+    LSReadModel *model = [self.articleList objectAtIndex:indexPath.row];
+    cell.model = model;
     return cell;
 }
 
@@ -43,16 +48,19 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
     searchString = [searchString stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [LSService searchArticle:@"圣墟"
+    [LSService searchArticle:searchString
            completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
                 NSArray *array = [[LSEngine shareEngine] searchArticleList:string];
                [self.articleList removeAllObjects];
-               [self.articleList addObjectsFromArray:array];
+               for (NSDictionary *info in array) {
+                   LSReadModel *model = [[LSReadModel alloc] init];
+                   [model setValuesForKeysWithDictionary:info];
+                   [self.articleList addObject:model];
+               }
                [controller.searchResultsTableView reloadData];
     }];
     return YES;
 }
-
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView {
     [self configureTableView:tableView];

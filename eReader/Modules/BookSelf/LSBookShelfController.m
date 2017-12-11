@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "LSPageController.h"
 #import "LSSearchDelegate.h"
+#import "LSBookCell.h"
 
 @interface LSBookShelfController ()<UITableViewDelegate,UITableViewDataSource,UISearchControllerDelegate>{
     UISearchDisplayController           *searchDisplayController;
@@ -21,21 +22,22 @@
 }
 @property (nonatomic, strong)JSContext *context;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) NSMutableArray        *dataArray;
 @end
 
 @implementation LSBookShelfController
 
+- (instancetype)init{
+    if (self = [super init]) {
+        self.dataArray = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self layoutSearchBar];
-//    [LSService searchArticle:@"圣墟"
-//           completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
-//                NSArray *content = [[LSEngine shareEngine] searchArticleList:string];
-//               NSLog(@"%@",content);
-//    }];
     
 //    [LSService getRecentlyChapter:@"http://m.book9.net/wapbook/10.html" completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
 //        NSArray *content = [[LSEngine shareEngine] getRecentlyChapter:string];
@@ -78,15 +80,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    LSBookCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"LSBookCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"LSBookCell" owner:nil options:0] firstObject];
     }
+    LSReadModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    cell.model = model;
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataArray.count;
 }
 
 - (void)didReceiveMemoryWarning {

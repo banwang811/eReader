@@ -21,8 +21,8 @@
 
 #define LSAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
-#define SEARCH_URL  @"http://m.book9.net/s.php?"
+#define SEARCH_URL               @"http://m.book9.net/s.php?"
 
-
+#define SERVER_ADDRESS           @"http://m.book9.net"
 
 #endif /* Interface_h */
