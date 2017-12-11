@@ -10,8 +10,7 @@
 
 @implementation LSPrase
 
-+ (LSChapterModel *)praseChapterModel:(NSString *)content{
-    LSChapterModel *model = [[LSChapterModel alloc] init];
++ (LSChapterModel *)praseChapterWithContent:(NSString *)content chapterModel:(LSChapterModel *)model{
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:content];
     NSDictionary *attribute = [LSPrase parserAttribute:[LSYReadConfig shareInstance]];
     [attStr setAttributes:attribute range:NSMakeRange(0, attStr.length)];

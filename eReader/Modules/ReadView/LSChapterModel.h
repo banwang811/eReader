@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LSChapterModel : NSObject
+@interface LSChapterModel : NSObject<NSCopying,NSCoding>
 
 @property (nonatomic, strong) NSString               *title;
 @property (nonatomic, assign) NSInteger               pageCount;

@@ -13,6 +13,8 @@
 
 + (CTFrameRef)parserContent:(NSString *)content  bouds:(CGRect)bounds;
 
-+ (LSChapterModel *)praseChapterModel:(NSString *)content;
++ (LSChapterModel *)praseChapterWithContent:(NSString *)content chapterModel:(LSChapterModel *)model;
+
++ (NSDictionary *)parserAttribute:(LSYReadConfig *)config;
 
 @end
