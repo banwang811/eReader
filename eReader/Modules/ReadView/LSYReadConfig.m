@@ -36,7 +36,7 @@
         _lineSpace = 10.0f;
         _fontSize = 14.0f;
         _fontColor = [UIColor blackColor];
-        _theme = [UIColor colorWithRed:188 green:169 blue:139 alpha:1];
+        _theme = [UIColor colorWithRed:188/255.0 green:169/255.0 blue:139/255.0 alpha:1];
         [self addObserver:self forKeyPath:@"fontSize" options:NSKeyValueObservingOptionNew context:NULL];
         [self addObserver:self forKeyPath:@"lineSpace" options:NSKeyValueObservingOptionNew context:NULL];
         [self addObserver:self forKeyPath:@"fontColor" options:NSKeyValueObservingOptionNew context:NULL];

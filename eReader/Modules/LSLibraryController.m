@@ -57,6 +57,7 @@
         LSChapterModel *model = [LSPrase praseChapterModel:content];
         LSPageController *con = [[LSPageController alloc] init];
         [con.chapterModels addObject:model];
+        self.navigationController.navigationBarHidden = YES;
         [self.navigationController pushViewController:con animated:YES];
     }];
 }
