@@ -10,4 +10,6 @@
 
 @interface LSSearchDelegate : NSObject<UISearchBarDelegate,UISearchDisplayDelegate>
 
+@property (nonatomic, strong) UISearchDisplayController           *searchDisplayController;
+
 @end

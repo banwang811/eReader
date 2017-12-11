@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.view.backgroundColor = [LSYReadConfig shareInstance].theme;
     [self.view addSubview:self.readingView];
 }
 

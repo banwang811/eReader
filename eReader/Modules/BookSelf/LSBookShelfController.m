@@ -59,6 +59,7 @@
     searchDisplayController.searchResultsDataSource = searchDelegate;
     searchDisplayController.searchResultsDelegate = searchDelegate;
     searchDisplayController.delegate = searchDelegate;
+    searchDelegate.searchDisplayController = searchDisplayController;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
