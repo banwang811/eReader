@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LSReadController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LSLibraryController">
             <connections>
+                <outlet property="tableView" destination="hMV-B6-WKa" id="jVO-ht-ElP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="webview" destination="AaE-CV-0Vc" id="PNo-0q-GmW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,20 +21,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaE-CV-0Vc">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hMV-B6-WKa">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="Lpm-Sh-Gar"/>
+                        <outlet property="dataSource" destination="-1" id="59k-4G-QcX"/>
+                        <outlet property="delegate" destination="-1" id="DS1-bV-vxz"/>
                     </connections>
-                </webView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="AaE-CV-0Vc" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="V7I-JN-ccX"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="AaE-CV-0Vc" secondAttribute="bottom" id="gcv-BS-lrp"/>
-                <constraint firstItem="AaE-CV-0Vc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jTK-Ta-qOf"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="AaE-CV-0Vc" secondAttribute="trailing" id="yQT-Qa-4jw"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hMV-B6-WKa" secondAttribute="trailing" id="8VZ-9E-eSn"/>
+                <constraint firstItem="hMV-B6-WKa" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Ck4-zj-D5R"/>
+                <constraint firstItem="hMV-B6-WKa" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Ofb-ue-pf1"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="hMV-B6-WKa" secondAttribute="bottom" id="n1x-QI-vet"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>

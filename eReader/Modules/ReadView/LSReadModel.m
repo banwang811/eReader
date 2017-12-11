@@ -13,4 +13,9 @@
 - (NSString *)url{
     return [NSString stringWithFormat:@"%@%@",SERVER_ADDRESS,_url];
 }
+
+- (NSString *)libraryUrl{
+    return [self.url stringByReplacingOccurrencesOfString:@".html" withString:@"_all.html"];
+}
+
 @end

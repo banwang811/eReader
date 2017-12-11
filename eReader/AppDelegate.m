@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "LSBookShelfController.h"
 #import "LSPageController.h"
-#import "LSReadController.h"
 
 @interface AppDelegate ()
 

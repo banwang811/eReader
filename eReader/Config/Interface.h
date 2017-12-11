@@ -19,6 +19,8 @@
 //屏幕高度
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define LSDidSelectBookNotification  @"LSDidSelectBookNotification"
+
 #define LSAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 #define SEARCH_URL               @"http://m.book9.net/s.php?"

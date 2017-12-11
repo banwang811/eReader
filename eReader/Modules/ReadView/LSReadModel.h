@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString          *title;
 @property (nonatomic, strong) NSString          *author;
 @property (nonatomic, strong) NSString          *discripe;
+@property (nonatomic, strong) NSString          *libraryUrl;
 
 @end

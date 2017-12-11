@@ -43,7 +43,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    LSReadModel *model = [self.articleList objectAtIndex:indexPath.row];
+    [[NSNotificationCenter defaultCenter] postNotificationName:LSDidSelectBookNotification object:model];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{

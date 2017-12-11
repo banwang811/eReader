@@ -12,6 +12,7 @@
 #import "LSPageController.h"
 #import "LSSearchDelegate.h"
 #import "LSBookCell.h"
+#import "LSLibraryController.h"
 
 @interface LSBookShelfController ()<UITableViewDelegate,UITableViewDataSource,UISearchControllerDelegate>{
     UISearchDisplayController           *searchDisplayController;
@@ -38,17 +39,15 @@
     [super viewDidLoad];
     
     [self layoutSearchBar];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didSelctBook:)
+                                                 name:LSDidSelectBookNotification object:nil];
 //    [LSService getRecentlyChapter:@"http://m.book9.net/wapbook/10.html" completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
 //        NSArray *content = [[LSEngine shareEngine] getRecentlyChapter:string];
 //        NSLog(@"%@",content);
 //    }];
     
-//    [LSService getChapterList:@"http://m.book9.net/wapbook/10_all.html" completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
-//        NSArray *content = [[LSEngine shareEngine] getChapterList:string];
-//        NSLog(@"%@",content);
-//    }];
-    
+
 //    [LSService getChapterContent:@"http://m.book9.net/wapbook/10_1836647.html" completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
 //            NSLog(@"%@",string);
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -91,6 +90,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    LSReadModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    LSLibraryController *controller = [[LSLibraryController alloc] init];
+    controller.model = model;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)didSelctBook:(NSNotification *)noti{
+    LSReadModel *model = (LSReadModel *)noti.object;
+    LSLibraryController *controller = [[LSLibraryController alloc] init];
+    controller.model = model;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

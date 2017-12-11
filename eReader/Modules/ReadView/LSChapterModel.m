@@ -17,6 +17,10 @@
     return self;
 }
 
+- (NSString *)url{
+    return [NSString stringWithFormat:@"%@%@",SERVER_ADDRESS,_url];
+}
+
 - (NSString *)stringOfPage:(NSUInteger)index{
     NSUInteger local = [_pageLocations[index] integerValue];
     NSUInteger length;
