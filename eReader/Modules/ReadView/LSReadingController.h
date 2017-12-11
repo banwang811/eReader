@@ -11,5 +11,7 @@
 @interface LSReadingController : LSBaseController
 
 @property (nonatomic, strong) NSString        *content;
+@property (nonatomic, assign) NSInteger       page;
+@property (nonatomic, assign) NSInteger       chapter;
 
 @end

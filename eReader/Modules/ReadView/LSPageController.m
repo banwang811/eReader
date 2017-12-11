@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) UIPageViewController     *pageViewController;
 @property (nonatomic, strong) LSChapterModel           *model;
+@property (nonatomic, strong) LSReadingController      *readView;   //当前阅读视图
+
 
 @end
 
@@ -66,39 +68,62 @@
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
-    if (_page == 0) {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    _pageChange = _page;
+    _chapterChange = _chapter;
+    if (_pageChange == 0) {
         //判断是否更换章节
-        if (_chapter > 0) {
-            _chapter --;
-            LSChapterModel *model = [self.chapterModels objectAtIndex:_chapter];
-            _page = model.pageCount - 1;
-            return [self readViewWithChapter:_chapter page:_page];
+        if (_chapterChange > 0) {
+            _chapterChange --;
+            LSChapterModel *model = [self.chapterModels objectAtIndex:_chapterChange];
+            _pageChange = model.pageCount - 1;
+            return [self readViewWithChapter:_chapterChange page:_pageChange];
         }else{
             //加载到第0章节
             return nil;
         }
     }else{
-        _page --;
+        _pageChange --;
     }
-    return [self readViewWithChapter:_chapter page:_page];
+    return [self readViewWithChapter:_chapterChange page:_pageChange];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    _pageChange = _page;
+    _chapterChange = _chapter;
     LSChapterModel *model = [self.chapterModels lastObject];
-    if (_page == model.pageCount - 1) {
+    if (_pageChange == model.pageCount - 1) {
         //判断是否更换章节
-        if (_chapter < self.chapterModels.count - 1) {
-            _chapter ++;
-            _page = 0;
-            return [self readViewWithChapter:_chapter page:_page];
+        if (_chapterChange < self.chapterModels.count - 1) {
+            _chapterChange ++;
+            _pageChange = 0;
+            return [self readViewWithChapter:_chapterChange page:_pageChange];
         }else{
             //加载到最后章节
             return nil;
         }
     }else{
-        _page ++ ;
+        _pageChange ++ ;
     }
-    return [self readViewWithChapter:_chapter page:_page];
+    return [self readViewWithChapter:_chapterChange page:_pageChange];
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    if (!completed) {
+        LSReadingController *readView = previousViewControllers.firstObject;
+        _readView = readView;
+        _page = readView.page;
+        _chapter = readView.chapter;
+    }
+}
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    _chapter = _chapterChange;
+    _page = _pageChange;
 }
 
 - (LSReadingController *)readViewWithChapter:(NSUInteger)chapter page:(NSUInteger)page{
@@ -106,6 +131,8 @@
     NSString *content = [model stringOfPage:page];
     LSReadingController *con = [LSReadingController new];
     con.content = content;
+    con.page = page;
+    con.chapter = chapter;
     return con;
 }
 
