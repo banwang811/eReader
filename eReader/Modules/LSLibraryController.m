@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = self.model.title;
     [LSService getChapterList:self.model.libraryUrl
             completionHandler:^(NSString *string, NSURLResponse *response, NSError *error) {
         NSArray *content = [[LSEngine shareEngine] getChapterList:string];

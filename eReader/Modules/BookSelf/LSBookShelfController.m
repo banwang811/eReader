@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"书架";
     [self layoutSearchBar];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didSelctBook:)
@@ -90,9 +90,24 @@
 
 - (void)didSelctBook:(NSNotification *)noti{
     LSReadModel *model = (LSReadModel *)noti.object;
+    [self addBook:model];
     LSLibraryController *controller = [[LSLibraryController alloc] init];
     controller.model = model;
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)addBook:(LSReadModel *)model{
+    BOOL shouldAdd = YES;
+    for (LSReadModel *book in self.dataArray){
+        if ([book.url isEqualToString:model.url]) {
+            shouldAdd = NO;
+            break;
+        }
+    }
+    if (shouldAdd) {
+        [self.dataArray addObject:model];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
