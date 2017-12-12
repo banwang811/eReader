@@ -47,6 +47,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LSChapterModel *model = [self.model.chapters objectAtIndex:indexPath.row];
+    if (indexPath.row == 0) {
+        NSRange range = [model.title rangeOfString:@"直达页面底部"];
+        if (range.location != NSNotFound) {
+            [self.tableView scrollToRow:self.model.chapters.count - 1 inSection:0 atScrollPosition:UITableViewScrollPositionNone animated:NO];
+            return;
+        }
+    }
     LSRecordModel *recordModel = [[LSRecordModel alloc] init];
     recordModel.chapter = indexPath.row;
     recordModel.page = 0;
