@@ -62,6 +62,11 @@
     searchDelegate.searchDisplayController = searchDisplayController;
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [searchDisplayController setActive:NO];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
@@ -89,6 +94,7 @@
 }
 
 - (void)didSelctBook:(NSNotification *)noti{
+    [searchDisplayController setActive:NO];
     LSReadModel *model = (LSReadModel *)noti.object;
     [self addBook:model];
     LSLibraryController *controller = [[LSLibraryController alloc] init];
