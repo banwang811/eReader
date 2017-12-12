@@ -8,6 +8,7 @@
 
 #import "LSPageController.h"
 #import "LSReadingController.h"
+#import "LSMenuView.h"
 
 @interface LSPageController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource>
 
@@ -21,7 +22,7 @@
 
 @property (nonatomic, strong) UIPageViewController     *pageViewController;
 @property (nonatomic, strong) LSReadingController      *readView;   //当前阅读视图
-
+@property (nonatomic, strong) LSMenuView               *menuView;
 
 @end
 
@@ -34,10 +35,34 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self loadChapter:_chapter page:_page];
-//    [self.pageViewController setViewControllers:[NSArray arrayWithObject:[self readViewWithChapter:_chapter page:_page]]
-//                                      direction:UIPageViewControllerNavigationDirectionReverse
-//                                       animated:NO
-//                                     completion:nil];
+    
+    [self.view addGestureRecognizer:({
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showToolMenu)];
+        tap.delegate = self;
+        tap;
+    })];
+    [self.view addSubview:self.menuView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(backClick)
+                                                 name:LSDidPageBackNotification
+                                               object:nil];
+}
+
+- (void)backClick{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (LSMenuView *)menuView{
+    if (_menuView == nil) {
+        _menuView = [[LSMenuView alloc] init];
+        _menuView.hidden = YES;
+    }
+    return _menuView;
+}
+
+- (void)showToolMenu{
+    [self.menuView showAnimation:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -63,6 +88,7 @@
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     _pageViewController.view.frame = self.view.frame;
+    _menuView.frame = self.view.frame;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{

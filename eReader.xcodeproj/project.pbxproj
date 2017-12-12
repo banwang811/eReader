@@ -40,6 +40,10 @@
 		A50C76DE1FDE223700DC1A37 /* LSLibraryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50C76DC1FDE223700DC1A37 /* LSLibraryCell.m */; };
 		A50C76DF1FDE223700DC1A37 /* LSLibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50C76DD1FDE223700DC1A37 /* LSLibraryCell.xib */; };
 		A54DFCB21FDE8A02009D05AB /* LSRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54DFCB11FDE8A02009D05AB /* LSRecordModel.m */; };
+		A5DC50DA1FDFD71F009A9421 /* LSMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DC50D91FDFD71F009A9421 /* LSMenuView.m */; };
+		A5DC50DD1FDFD755009A9421 /* LSMenuTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DC50DC1FDFD755009A9421 /* LSMenuTopView.m */; };
+		A5DC50E11FDFDA0E009A9421 /* bg_back_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DC50DF1FDFDA0E009A9421 /* bg_back_white.png */; };
+		A5DC50E21FDFDA0E009A9421 /* bg_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DC50E01FDFDA0E009A9421 /* bg_back_white@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +127,12 @@
 		A50C76DD1FDE223700DC1A37 /* LSLibraryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LSLibraryCell.xib; sourceTree = "<group>"; };
 		A54DFCB01FDE8A02009D05AB /* LSRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSRecordModel.h; sourceTree = "<group>"; };
 		A54DFCB11FDE8A02009D05AB /* LSRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSRecordModel.m; sourceTree = "<group>"; };
+		A5DC50D81FDFD71F009A9421 /* LSMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSMenuView.h; sourceTree = "<group>"; };
+		A5DC50D91FDFD71F009A9421 /* LSMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSMenuView.m; sourceTree = "<group>"; };
+		A5DC50DB1FDFD755009A9421 /* LSMenuTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSMenuTopView.h; sourceTree = "<group>"; };
+		A5DC50DC1FDFD755009A9421 /* LSMenuTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSMenuTopView.m; sourceTree = "<group>"; };
+		A5DC50DF1FDFDA0E009A9421 /* bg_back_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_back_white.png; sourceTree = "<group>"; };
+		A5DC50E01FDFDA0E009A9421 /* bg_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_back_white@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +293,7 @@
 		A50335591FD7863100EE0D43 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				A5DC50DE1FDFDA08009A9421 /* image */,
 				A50335661FD7864B00EE0D43 /* prase */,
 			);
 			path = Src;
@@ -327,6 +338,10 @@
 				A503359B1FD7C76F00EE0D43 /* LSReadingController.xib */,
 				A54DFCB01FDE8A02009D05AB /* LSRecordModel.h */,
 				A54DFCB11FDE8A02009D05AB /* LSRecordModel.m */,
+				A5DC50D81FDFD71F009A9421 /* LSMenuView.h */,
+				A5DC50D91FDFD71F009A9421 /* LSMenuView.m */,
+				A5DC50DB1FDFD755009A9421 /* LSMenuTopView.h */,
+				A5DC50DC1FDFD755009A9421 /* LSMenuTopView.m */,
 			);
 			path = ReadView;
 			sourceTree = "<group>";
@@ -338,6 +353,15 @@
 				5B5B4360259574B5D340EA5B /* Pods-eReader.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A5DC50DE1FDFDA08009A9421 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				A5DC50DF1FDFDA0E009A9421 /* bg_back_white.png */,
+				A5DC50E01FDFDA0E009A9421 /* bg_back_white@2x.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,7 +477,9 @@
 				A503352B1FD782A500EE0D43 /* LaunchScreen.storyboard in Resources */,
 				A50335281FD782A500EE0D43 /* Assets.xcassets in Resources */,
 				A503359D1FD7C76F00EE0D43 /* LSReadingController.xib in Resources */,
+				A5DC50E11FDFDA0E009A9421 /* bg_back_white.png in Resources */,
 				A50C76DA1FDE1E8400DC1A37 /* LSLibraryController.xib in Resources */,
+				A5DC50E21FDFDA0E009A9421 /* bg_back_white@2x.png in Resources */,
 				A50C76D51FDE1B4800DC1A37 /* LSBookCell.xib in Resources */,
 				A50C76DF1FDE223700DC1A37 /* LSLibraryCell.xib in Resources */,
 				A503357D1FD78CA600EE0D43 /* LSBookShelfController.xib in Resources */,
@@ -561,7 +587,9 @@
 				A503356D1FD7866700EE0D43 /* LSService.m in Sources */,
 				A50335971FD7C75800EE0D43 /* LSPageController.m in Sources */,
 				A50335A01FD7FC2800EE0D43 /* LSSearchDelegate.m in Sources */,
+				A5DC50DD1FDFD755009A9421 /* LSMenuTopView.m in Sources */,
 				A50335851FD7BCEE00EE0D43 /* LSPrase.m in Sources */,
+				A5DC50DA1FDFD71F009A9421 /* LSMenuView.m in Sources */,
 				A50335201FD782A500EE0D43 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

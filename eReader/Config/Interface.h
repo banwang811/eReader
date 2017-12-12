@@ -14,12 +14,16 @@
 #define LeftSpacing 15.0f
 #define RightSpacing  15.0f
 
+#define ViewSize(view)  (view.frame.size)
+
 //屏幕宽度
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 //屏幕高度
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 #define LSDidSelectBookNotification  @"LSDidSelectBookNotification"
+#define LSDidPageBackNotification    @"LSDidPageBackNotification"
+
 
 #define LSAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
