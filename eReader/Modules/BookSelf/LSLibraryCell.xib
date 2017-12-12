@@ -25,10 +25,23 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEY-gl-LgC">
+                        <rect key="frame" x="0.0" y="17.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="a89-V9-NUO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="VEY-gl-LgC" secondAttribute="bottom" id="HXQ-DT-M6W"/>
                     <constraint firstItem="ing-W7-gDa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="JHz-2E-cH1"/>
                     <constraint firstItem="ing-W7-gDa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="V1l-LE-Ett"/>
+                    <constraint firstAttribute="trailing" secondItem="VEY-gl-LgC" secondAttribute="trailing" id="Yex-WI-4rg"/>
+                    <constraint firstItem="VEY-gl-LgC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eFg-lp-TUC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
