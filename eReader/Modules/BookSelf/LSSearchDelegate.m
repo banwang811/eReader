@@ -62,6 +62,10 @@
            }];
 }
 
+
+- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller{
+    [self.articleList removeAllObjects];
+}
 //- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
 //    searchString = [searchString stringByReplacingOccurrencesOfString:@" " withString:@""];
 //    [LSService searchArticle:searchString
