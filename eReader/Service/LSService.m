@@ -13,11 +13,13 @@
 //http://www.book9.net/modules/article/search.php?searchkey=%CA%A5%D0%E6
 + (void)searchArticle:(NSString *)searchkey completionHandler:(completionHandler)completionHandler{
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:SEARCH_URL];
+    NSString *param = [[NSString stringWithFormat:@"keyword=%@",searchkey] urlEncode];
+
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SEARCH_URL,param]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    [request setHTTPMethod:@"post"];
-    NSData *body = [[[NSString stringWithFormat:@"keyword=%@",searchkey] urlEncode] dataUsingEncoding:NSUTF8StringEncoding];
-    [request setHTTPBody:body];
+//    [request setHTTPMethod:@"post"];
+//    NSData *body = [param dataUsingEncoding:NSUTF8StringEncoding];
+//    [request setHTTPBody:body];
     NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse *response, NSError *error) {
         NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
         NSString *htmlStr=[[NSString alloc]initWithData:data encoding:enc];

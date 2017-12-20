@@ -9,7 +9,7 @@
 #import "LSSearchDelegate.h"
 #import "LSBookCell.h"
 
-@interface LSSearchDelegate()
+@interface LSSearchDelegate()<UISearchBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray        *articleList;
 
@@ -62,6 +62,9 @@
            }];
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [self.articleList removeAllObjects];
+}
 
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller{
     [self.articleList removeAllObjects];
