@@ -89,8 +89,12 @@
     LSReadModel *model = [self.dataArray objectAtIndex:indexPath.row];
     LSLibraryController *controller = [[LSLibraryController alloc] init];
     controller.model = model;
-    
+
     [self.navigationController pushViewController:controller animated:YES];
+//    LSReadModel *model = [self.dataArray objectAtIndex:indexPath.row];
+//    LSPageController *con = [[LSPageController alloc] init];
+//    con.model = model;
+//    [self.navigationController pushViewController:con animated:YES];
 }
 
 - (void)didSelctBook:(NSNotification *)noti{

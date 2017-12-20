@@ -157,8 +157,18 @@
         _readView = readView;
         _page = readView.page;
         _chapter = readView.chapter;
+    }else{
+        [self updateReadModelWithChapter:_chapter page:_page];
     }
 }
+
+- (void)updateReadModelWithChapter:(NSUInteger)chapter page:(NSUInteger)page{
+    _chapter = chapter;
+    _page = page;
+    _model.recordModel.chapter = chapter;
+    _model.recordModel.page = page;
+}
+
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
 {
     NSLog(@"%@",NSStringFromSelector(_cmd));
@@ -192,6 +202,7 @@
                                           direction:UIPageViewControllerNavigationDirectionReverse
                                            animated:NO
                                          completion:nil];
+        [self updateReadModelWithChapter:_chapter page:_page];
     }];
 }
 
