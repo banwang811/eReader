@@ -55,10 +55,13 @@ dispatch_semaphore_t semaphore;
 }
 
 - (NSArray *)searchArticleList:(NSString *)htmlStr{
-    JSValue *prase = _context[@"searchArticleList"];
-    JSValue *content  = [prase callWithArguments:[NSArray arrayWithObject:htmlStr]];
-    NSArray *infos = [content toArray];
-    return infos;
+    if (htmlStr) {
+        JSValue *prase = _context[@"searchArticleList"];
+        JSValue *content  = [prase callWithArguments:[NSArray arrayWithObject:htmlStr]];
+        NSArray *infos = [content toArray];
+        return infos;
+    }
+    return nil;
 }
 
 - (NSArray *)getPraseCatalogue:(NSString *)htmlStr{
